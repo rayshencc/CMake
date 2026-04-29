@@ -645,7 +645,9 @@ class cmMakefile;
          0, WARN)                                                             \
   SELECT(POLICY, CMP0215,                                                     \
          "Ninja generators emit Swift modules separately from compilation.",  \
-         4, 4, 0, WARN)
+         4, 4, 0, WARN)                                                       \
+  SELECT(POLICY, CMP0216, "Swift targets have a default project name.", 4, 4, \
+         0, WARN)
 
 #define CM_SELECT_ID(F, A1, A2, A3, A4, A5, A6) F(A1)
 #define CM_FOR_EACH_POLICY_ID(POLICY)                                         \
@@ -703,7 +705,8 @@ class cmMakefile;
   F(CMP0210)                                                                  \
   F(CMP0211)                                                                  \
   F(CMP0214)                                                                  \
-  F(CMP0215)
+  F(CMP0215)                                                                  \
+  F(CMP0216)
 
 #define CM_FOR_EACH_CUSTOM_COMMAND_POLICY(F)                                  \
   F(CMP0116)                                                                  \

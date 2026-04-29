@@ -182,3 +182,10 @@ if(RunCMake_GENERATOR MATCHES "Ninja")
   run_cmake(CMP0214-OLD)
   run_cmake(CMP0214-NEW-CMP0157-OLD)
 endif()
+
+if(NOT RunCMake_GENERATOR STREQUAL "Xcode" OR
+    (RunCMake_GENERATOR STREQUAL "Xcode" AND XCODE_VERSION VERSION_GREATER_EQUAL 15.0))
+  run_cmake(PackageName)
+  run_cmake(CMP0216-OLD)
+  run_cmake(CMP0216-NEW)
+endif()
